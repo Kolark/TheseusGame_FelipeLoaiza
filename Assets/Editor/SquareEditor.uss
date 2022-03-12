@@ -1,0 +1,20 @@
+Label {
+    font-size: 20px;
+    -unity-font-style: bold;
+    color: rgb(68, 138, 255);
+}
+
+.On {
+    background-color: rgb(0, 0, 0);
+}
+
+.Inactive {
+}
+
+.Off {
+    background-color: rgba(179, 255, 255, 0);
+    border-left-color: rgba(0, 0, 0, 0.27);
+    border-right-color: rgba(0, 0, 0, 0.27);
+    border-top-color: rgba(0, 0, 0, 0.27);
+    border-bottom-color: rgba(0, 0, 0, 0.27);
+}

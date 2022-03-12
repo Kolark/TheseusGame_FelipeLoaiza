@@ -16,3 +16,215 @@ MonoBehaviour:
   enemyPos: {x: 8, y: 8}
   exitPos: {x: 3, y: 3}
   message: grats on winning lvl2
+  grid:
+  - cols:
+    - leftWall: 1
+      topWall: 1
+    - leftWall: 1
+      topWall: 1
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+  - cols:
+    - leftWall: 1
+      topWall: 1
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+  - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+  - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+  - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+  - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+  - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+  - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+  - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+  - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+  pressThisBeforeSave: 0

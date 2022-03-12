@@ -39,11 +39,13 @@ public class GridCustomEditor : Editor
         var EnemyPos = root.Q<Vector2IntField>("EnemyPos");
         var ExitPos = root.Q<Vector2IntField>("ExitPos");
         var Message = root.Q<TextField>("Message");
+        var toggle = root.Q<Toggle>("PressThisBeforeSave");
 
         PlayerPos.BindProperty(serializedObject.FindProperty("playerPos"));
         EnemyPos.BindProperty(serializedObject.FindProperty("enemyPos"));
         ExitPos.BindProperty(serializedObject.FindProperty("exitPos"));
         Message.BindProperty(serializedObject.FindProperty("message"));
+        toggle.BindProperty(serializedObject.FindProperty("pressThisBeforeSave"));
 
         PlayerPos.RegisterValueChangedCallback((e) =>
         {

@@ -2,6 +2,7 @@
     <uie:Vector2IntField label="PlayerPos" name="PlayerPos" style="background-color: rgb(1, 72, 0);" />
     <uie:Vector2IntField label="EnemyPos" name="EnemyPos" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgb(91, 0, 0);" />
     <uie:Vector2IntField label="ExitPos" name="ExitPos" style="color: rgb(149, 149, 149); background-color: rgb(113, 97, 0);" />
+    <ui:Toggle label="PressThisBeforeSave" name="PressThisBeforeSave" />
     <ui:TextField picking-mode="Ignore" label="Win Message" value="filler text" name="Message" />
     <ui:VisualElement name="Parent">
         <ui:VisualElement name="Container" style="background-color: rgb(26, 26, 26);" />

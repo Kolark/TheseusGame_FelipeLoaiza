@@ -9,8 +9,9 @@ public class GridObject : ScriptableObject
     [SerializeField] Vector2Int enemyPos;
     [SerializeField] Vector2Int exitPos;
     [SerializeField] string message;
-    List<Row> grid = new List<Row>();
+    [SerializeField,HideInInspector] List<Row> grid = new List<Row>();
 
+    [SerializeField] bool pressThisBeforeSave;
     public int Rows => GlobalSettings.Rows;
     public int Columns => GlobalSettings.Columns;
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+//Simple Controller for ui related stuff
 public class UiController : MonoBehaviour
 {
     [SerializeField] GameObject victoryText;

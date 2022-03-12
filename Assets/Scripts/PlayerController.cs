@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class PlayerController : GridEntity
 {
+    //Player Inputs
     Inputs inputs;
     public Inputs Inputs => inputs;
+    //Gets Inputs component
     public override void INIT(GridController grid)
     {
         base.INIT(grid);
@@ -23,6 +25,7 @@ public class PlayerController : GridEntity
             onWait?.Invoke();
         } ;
     }
+    //For good practice although not that necessary
     private void OnDestroy()
     {
         inputs.onLeftArrow = null;

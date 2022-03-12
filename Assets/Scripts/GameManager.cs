@@ -4,35 +4,41 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    //Entities
+    //Game Components
     [SerializeField] PlayerController player;
     [SerializeField] EnemyController enemy;
+    //Exit Sprite
     [SerializeField] Transform exit;
-
+    //Reference to both the gridController and it's levels
     [SerializeField] GridController grid;
     [SerializeField] GridObject[] levels;
-
+    //Reference to the simple ui controller
     [SerializeField] UiController uiController;
     GameStates currentState = GameStates.Playing;
 
     private int currentLevel = 0;
-
+    //Initialize most components
     private void Awake()
     {
         grid.SetCurrentGrid(levels[currentLevel]);
-
+        //Player initialization
         player.INIT(grid);
         player.SetEvents(enemy.Move);
         player.onMove += OnPlayerMove;
-
+        //Enemy Initialization
         enemy.INIT(grid);
         enemy.SetTarget(player);
         enemy.onTurnFinished += OnEnemyEndedTurn;
+        //Level initialization
         SetupLevel();
     }
 
     private void Update()
     {
+        //Note: This GetKeyDowns are here and not on the
+        //inputs class, since the inputs class deals with the player and not other 
+        //things in the game, like state management
+        //So that's why this is here
         //Debug
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -86,6 +92,7 @@ public class GameManager : MonoBehaviour
         uiController.HideAll();
         SetupLevel();
     }
+    //Listening to when player moves unsuccesfully or not
     private void OnPlayerMove(bool success, Vector2Int dir)
     {
         if (success)
@@ -94,6 +101,7 @@ public class GameManager : MonoBehaviour
             enemy.Move();
         }
     }
+    //Called when enemy has no more moves, allowing the player to move again
     private void OnEnemyEndedTurn()
     {
         if(enemy.GetCurrentPos == player.GetCurrentPos)
@@ -115,20 +123,22 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
+    //In case of victory or defeat continue the game
     private void Continue()
     {
         if(currentState == GameStates.Won)
         {
             NextLevel();
+            currentState = GameStates.Playing;
         }
         else if(currentState == GameStates.Lost)
         {
             SetupLevel();
+            currentState = GameStates.Playing;
         }
     }
 }
-
+//States of the gameManager
 public enum GameStates
 {
     Playing,

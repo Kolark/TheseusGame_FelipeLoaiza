@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class EnemyController : GridEntity
 {
+    //Amount of time to wait per move
     WaitForSeconds wait = new WaitForSeconds(0.35f);
     //The amount of steps it takes per movement
     [SerializeField] int stepsPerMovement;
     GridEntity target;
     public System.Action onTurnFinished;
+
+    //Set Target to follow.
     public void SetTarget(GridEntity target)
     {
         this.target = target;
         this.onMove += OnAfterMove;
     }
 
+    //Move a defined number of times
     public void Move()
     {
         StartCoroutine(MoveCoroutine());
@@ -30,7 +34,7 @@ public class EnemyController : GridEntity
         }
         onTurnFinished?.Invoke();
     }
-
+    //Revers movement in this case the amount determined by stepsPerMovement
     public override void UndoMovement()
     {
         for (int i = 0; i < stepsPerMovement; i++)

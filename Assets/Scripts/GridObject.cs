@@ -4,14 +4,19 @@ using UnityEngine;
 [CreateAssetMenu( fileName = "gridObj",menuName = "grid/create Grid",order =0)]
 public class GridObject : ScriptableObject
 {
-    //Player and Enemy Pos
+    //Player,Enemy and Exit Positions
     [SerializeField] Vector2Int playerPos;
     [SerializeField] Vector2Int enemyPos;
     [SerializeField] Vector2Int exitPos;
+    //Victory Message
     [SerializeField] string message;
+    //Grid Data
     [SerializeField,HideInInspector] List<Row> grid = new List<Row>();
 
+    //Since the custom editor is not binded to the grid property, this allows us to manually save it.
     [SerializeField] bool pressThisBeforeSave;
+
+    //Getters
     public int Rows => GlobalSettings.Rows;
     public int Columns => GlobalSettings.Columns;
 
@@ -22,6 +27,8 @@ public class GridObject : ScriptableObject
     public string Message => message;
 
 #if UNITY_EDITOR
+    //In case the amount of rows and columns changes this updates it 
+    //without destroying the current ones
     public void UpdateGrid()
     {
    

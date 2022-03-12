@@ -2,12 +2,14 @@ using UnityEngine;
 using System.Collections.Generic;
 public class GridEntity : MonoBehaviour
 {
+    //Saved old positions, allows it to undo
     protected Stack<Vector2Int> recordedPositions;
+
     protected Vector2Int currentPos;
+
     public Vector2Int GetCurrentPos => currentPos;
-    /// <summary>
+
     /// WasItSuccesful, Direction
-    /// </summary>
     public System.Action<bool,Vector2Int> onMove;
     protected GridController grid;
     //Initialized Grid Entity, passing it's parameters needed.
@@ -79,7 +81,7 @@ public class GridEntity : MonoBehaviour
         }
         onMove?.Invoke(tryMove,Vector2Int.down);
     }
-
+    //Generalized move method
     private void NewMove(Vector2Int dir)
     {
         currentPos += dir;

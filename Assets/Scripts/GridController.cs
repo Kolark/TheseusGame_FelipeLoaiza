@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class GridController : MonoBehaviour
 {
+    //Current grid data
     GridObject level;
 
-
+    //Info that allows it to instantiate squares and walls.
     [SerializeField] Transform squaresParent;
     [SerializeField] GameObject square;
 
@@ -14,14 +15,17 @@ public class GridController : MonoBehaviour
     [SerializeField] GameObject horizontalWall;
     [SerializeField] GameObject verticalWall;
 
+    //squares in the grid as well as its walls
     private List<List<Transform>> squareTransforms;
     private List<List<Transform>> verticalWalls;
     private List<List<Transform>> horizontalWalls;
 
+    //First time instantiation
     private bool instantiateObjects = false;
 
     //Public Methods
     
+    //Change and update walls according to a GridObject
     public void SetCurrentGrid(GridObject level)
     {
         this.level = level;
@@ -33,6 +37,7 @@ public class GridController : MonoBehaviour
         }
         ActivateWalls();
     }
+    //Tries to move if its not out of boundaries , and not facing any walls
     public bool TryMove(Vector2Int currentPos,Vector2Int desiredPos)
     {
         bool isInside = desiredPos.x >= 0

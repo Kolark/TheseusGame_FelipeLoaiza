@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
     //Setups walls, and initial positions for both player and Enemy
     public void SetupLevel()
     {
-        grid.ActivateWalls();
+        grid.SetCurrentGrid(levels[currentLevel]);
         player.Inputs.Enable();
         uiController.HideAll();
         player.SetPosition(levels[currentLevel].PlayerPos);

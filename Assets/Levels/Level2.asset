@@ -12,52 +12,199 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 982ca8225cfff854eaae0a6bd676c7b4, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: 
-  playerPos: {x: 0, y: 0}
-  enemyPos: {x: 8, y: 8}
-  exitPos: {x: 3, y: 3}
-  message: grats on winning lvl2
+  playerPos: {x: 1, y: 0}
+  enemyPos: {x: 8, y: 0}
+  exitPos: {x: 4, y: 8}
+  message: The idea of this level is to come up with an idea of how to trap the minotaur.
   grid:
   - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
     - leftWall: 1
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 1
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 1
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+  - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 1
+      topWall: 1
+    - leftWall: 0
       topWall: 1
     - leftWall: 1
       topWall: 1
     - leftWall: 0
-      topWall: 0
+      topWall: 1
     - leftWall: 0
       topWall: 0
     - leftWall: 0
       topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
+    - leftWall: 1
       topWall: 0
     - leftWall: 0
       topWall: 0
   - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 1
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 1
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+  - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 1
+    - leftWall: 0
+      topWall: 1
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 1
+      topWall: 1
+    - leftWall: 0
+      topWall: 1
+    - leftWall: 1
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+  - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 1
+      topWall: 0
+    - leftWall: 0
+      topWall: 1
+    - leftWall: 1
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 1
+    - leftWall: 0
+      topWall: 1
+  - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 1
+      topWall: 0
+    - leftWall: 1
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 1
+    - leftWall: 1
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+  - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 1
+      topWall: 0
+    - leftWall: 1
+      topWall: 0
+    - leftWall: 0
+      topWall: 1
+    - leftWall: 0
+      topWall: 1
+    - leftWall: 0
+      topWall: 1
+    - leftWall: 1
+      topWall: 0
+    - leftWall: 0
+      topWall: 1
+    - leftWall: 0
+      topWall: 0
+  - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
     - leftWall: 1
       topWall: 1
     - leftWall: 0
       topWall: 0
     - leftWall: 0
       topWall: 0
+    - leftWall: 1
+      topWall: 0
     - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 1
+      topWall: 1
+    - leftWall: 0
+      topWall: 0
+  - cols:
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 0
+      topWall: 1
+    - leftWall: 1
+      topWall: 0
+    - leftWall: 0
+      topWall: 0
+    - leftWall: 1
+      topWall: 0
+    - leftWall: 1
       topWall: 0
     - leftWall: 0
       topWall: 0
     - leftWall: 0
       topWall: 0
     - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
+      topWall: 1
+    - leftWall: 1
       topWall: 0
   - cols:
     - leftWall: 0
@@ -68,156 +215,9 @@ MonoBehaviour:
       topWall: 0
     - leftWall: 0
       topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-  - cols:
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-  - cols:
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-  - cols:
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
+    - leftWall: 1
       topWall: 0
-  - cols:
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-  - cols:
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-  - cols:
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-  - cols:
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
-      topWall: 0
-    - leftWall: 0
+    - leftWall: 1
       topWall: 0
     - leftWall: 0
       topWall: 0
@@ -227,4 +227,4 @@ MonoBehaviour:
       topWall: 0
     - leftWall: 0
       topWall: 0
-  pressThisBeforeSave: 0
+  pressThisBeforeSave: 1

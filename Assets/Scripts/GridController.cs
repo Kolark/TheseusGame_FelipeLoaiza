@@ -18,16 +18,21 @@ public class GridController : MonoBehaviour
     private List<List<Transform>> verticalWalls;
     private List<List<Transform>> horizontalWalls;
 
+    private bool instantiateObjects = false;
+
     //Public Methods
     
     public void SetCurrentGrid(GridObject level)
     {
         this.level = level;
-        GenerateGrid();
-        GenerateWalls();
+        if (!instantiateObjects)
+        {//First time
+            GenerateGrid();
+            GenerateWalls();
+            instantiateObjects = true;
+        }
         ActivateWalls();
     }
-
     public bool TryMove(Vector2Int currentPos,Vector2Int desiredPos)
     {
         bool isInside = desiredPos.x >= 0

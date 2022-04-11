@@ -14,10 +14,7 @@ public class PlayerController : GridEntity
     //Sets Events that are triggered by the Inputs Class
     public void SetEvents(System.Action onWait)
     {
-        inputs.onLeftArrow += MoveLeft;
-        inputs.onRightArrow += MoveRight;
-        inputs.onDownArrow += MoveDown;
-        inputs.onUpArrow += MoveUp;
+        inputs.onMovementInput += Move;
         inputs.onWait += ()=> 
         {
             recordedPositions.Push(currentPos);
@@ -25,13 +22,11 @@ public class PlayerController : GridEntity
             onWait?.Invoke();
         } ;
     }
+
     //For good practice although not that necessary
     private void OnDestroy()
     {
-        inputs.onLeftArrow = null;
-        inputs.onRightArrow = null;
-        inputs.onDownArrow = null;
-        inputs.onUpArrow = null;
+        inputs.onMovementInput -= Move;
         inputs.onWait = null;
     }
 }

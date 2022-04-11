@@ -54,11 +54,13 @@ public class EnemyController : GridEntity
 
             if(diffX > 0)//target to the right
             {
-                MoveRight();
+                //MoveRight();
+                Move(Vector2Int.right);
             }
             else //target to the left
             {
-                MoveLeft();
+                //MoveLeft();
+                Move(Vector2Int.left);
             }
             
         }
@@ -81,11 +83,13 @@ public class EnemyController : GridEntity
     {
         if (diffY > 0)//target went up
         {
-            MoveUp();
+            //MoveUp();
+            Move(Vector2Int.up);
         }
         else //target went down
         {
-            MoveDown();
+            //MoveDown();
+            Move(Vector2Int.down);
         }
     }
 }

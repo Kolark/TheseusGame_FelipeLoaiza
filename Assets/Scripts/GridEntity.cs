@@ -37,50 +37,18 @@ public class GridEntity : MonoBehaviour
         transform.position = grid.GetPosition(currentPos);
     }
 
-    //Tries to MoveLeft;
-    public void MoveLeft()
+    public void Move(Vector2Int dir)
     {
         recordedPositions.Push(currentPos);
-        bool tryMove = grid.TryMove(currentPos, currentPos + Vector2Int.left);
+        bool tryMove = grid.TryMove(currentPos, currentPos + dir);
         if (tryMove)
         {
-            NewMove(Vector2Int.left);
+            NewMove(dir);
         }
-        onMove?.Invoke(tryMove,Vector2Int.left);
+        onMove?.Invoke(tryMove, dir);
     }
-    //Tries to MoveRight;
-    public void MoveRight()
-    {
-        recordedPositions.Push(currentPos);
-        bool tryMove = grid.TryMove(currentPos, currentPos + Vector2Int.right);
-        if (tryMove)
-        {
-            NewMove(Vector2Int.right);
-        }
-        onMove?.Invoke(tryMove,Vector2Int.right);
-    }
-    //Tries to MoveUp
-    public void MoveUp()
-    {
-        recordedPositions.Push(currentPos);
-        bool tryMove = grid.TryMove(currentPos, currentPos + Vector2Int.up);
-        if (tryMove)
-        {
-            NewMove(Vector2Int.up);
-        }
-        onMove?.Invoke(tryMove,Vector2Int.up);
-    }
-    //Tries to MoveDown;
-    public void MoveDown()
-    {
-        recordedPositions.Push(currentPos);
-        bool tryMove = grid.TryMove(currentPos, currentPos + Vector2Int.down);
-        if (tryMove)
-        {
-            NewMove(Vector2Int.down);
-        }
-        onMove?.Invoke(tryMove,Vector2Int.down);
-    }
+
+   
     //Generalized move method
     private void NewMove(Vector2Int dir)
     {
@@ -89,3 +57,49 @@ public class GridEntity : MonoBehaviour
     }
     
 }
+
+
+////Tries to MoveLeft;
+//private void MoveLeft()
+//{
+//    recordedPositions.Push(currentPos);
+//    bool tryMove = grid.TryMove(currentPos, currentPos + Vector2Int.left);
+//    if (tryMove)
+//    {
+//        NewMove(Vector2Int.left);
+//    }
+//    onMove?.Invoke(tryMove, Vector2Int.left);
+//}
+////Tries to MoveRight;
+//private void MoveRight()
+//{
+//    recordedPositions.Push(currentPos);
+//    bool tryMove = grid.TryMove(currentPos, currentPos + Vector2Int.right);
+//    if (tryMove)
+//    {
+//        NewMove(Vector2Int.right);
+//    }
+//    onMove?.Invoke(tryMove, Vector2Int.right);
+//}
+////Tries to MoveUp
+//private void MoveUp()
+//{
+//    recordedPositions.Push(currentPos);
+//    bool tryMove = grid.TryMove(currentPos, currentPos + Vector2Int.up);
+//    if (tryMove)
+//    {
+//        NewMove(Vector2Int.up);
+//    }
+//    onMove?.Invoke(tryMove, Vector2Int.up);
+//}
+////Tries to MoveDown;
+//private void MoveDown()
+//{
+//    recordedPositions.Push(currentPos);
+//    bool tryMove = grid.TryMove(currentPos, currentPos + Vector2Int.down);
+//    if (tryMove)
+//    {
+//        NewMove(Vector2Int.down);
+//    }
+//    onMove?.Invoke(tryMove, Vector2Int.down);
+//}

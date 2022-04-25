@@ -9,6 +9,8 @@ public class GridEntity : MonoBehaviour
 
     public Vector2Int GetCurrentPos => currentPos;
 
+    //protected bool moveSuccessful = false;
+
     /// WasItSuccesful, Direction
     public System.Action<bool,Vector2Int> onMove;
     protected GridController grid;
@@ -37,15 +39,18 @@ public class GridEntity : MonoBehaviour
         transform.position = grid.GetPosition(currentPos);
     }
 
-    public void Move(Vector2Int dir)
+    public bool Move(Vector2Int dir)
     {
         recordedPositions.Push(currentPos);
         bool tryMove = grid.TryMove(currentPos, currentPos + dir);
         if (tryMove)
         {
             NewMove(dir);
+
         }
         onMove?.Invoke(tryMove, dir);
+
+        return tryMove;
     }
 
    

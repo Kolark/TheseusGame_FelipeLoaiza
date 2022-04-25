@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 [CreateAssetMenu( fileName = "gridObj",menuName = "grid/create Grid",order =0)]
 public class GridObject : ScriptableObject
 {
@@ -31,76 +32,29 @@ public class GridObject : ScriptableObject
     //without destroying the current ones
     public void UpdateGrid()
     {
-   
         int diffRows = GlobalSettings.Rows - grid.Count;
-
-        //If the amount decreases
-        if (grid.Count > 0)
+        foreach (Row row in grid)
         {
             int diffCols = GlobalSettings.Columns - grid[0].cols.Count;
-            if (diffCols < 0)
-            {
-                RemoveCols(Mathf.Abs(diffCols));
-            }//If the amount increases
-            else if (diffCols > 0)
-            {
-                AddCols(diffCols);
-            }
+            if (diffCols < 0){ Remove(row.cols, -diffCols); }//If the amount increases
+            else if (diffCols > 0){ Add<GridSquare>(row.cols,()=>new GridSquare(), diffCols); }
         }
-
-
         //If the amount decreases
-        if (diffRows < 0)
-        {
-            RemoveRows(Mathf.Abs(diffRows));
-        }//If the amount increases
+        if (diffRows < 0) { Remove(grid, -diffRows); }//If the amount increases
         else if (diffRows > 0)
         {
-            AddRows(diffRows);
-        }
-
-    }
-
-    private void AddRows(int amount)
-    {
-        for (int u = 0; u < amount; u++)
-        {
-            List<GridSquare> cols = new List<GridSquare>(GlobalSettings.Columns);
-            for (int i = 0; i < GlobalSettings.Columns; i++)
+            Add<Row>(grid,()=> 
             {
-                cols.Add(new GridSquare());
-            }
-            grid.Add(new Row { cols = cols });
+                List<GridSquare> cols = new List<GridSquare>(GlobalSettings.Columns);
+                for (int i = 0; i < GlobalSettings.Columns; i++) { cols.Add(new GridSquare());}
+                return new Row { cols = cols };
+            }, diffRows);
         }
     }
-    private void RemoveRows(int amount)
-    {
-        for (int i = 0; i < amount; i++)
-        {
-            grid.RemoveAt(grid.Count - 1);
-        }
-    }
+    //void Add<T>(IList myList, Func<T> constructor) { myList.Add(constructor()); }
+    private void Add<T>(IList myList, Func<T> constructor,int amount) { for (int u = 0; u < amount; u++){ myList.Add(constructor());} }
 
-    private void AddCols(int amount)
-    {
-        for (int i = 0; i < grid.Count; i++)
-        {
-            for (int u = 0; u < amount; u++)
-            {
-                grid[i].cols.Add(new GridSquare());
-            }
-        }
-    }
+    private void Remove(IList list,int amount) { for (int u = 0; u < amount; u++){ list.RemoveAt(list.Count - 1);} }
 
-    private void RemoveCols(int amount)
-    {
-        for (int i = 0; i < grid.Count; i++)
-        {
-            for (int u = 0; u < amount; u++)
-            {
-                grid[i].cols.RemoveAt(grid[i].cols.Count - 1);
-            }
-        }
-    }
 #endif
 }

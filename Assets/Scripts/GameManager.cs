@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
+
     //Game Components
     [SerializeField] PlayerController player;
     [SerializeField] EnemyController enemy;
@@ -97,8 +99,23 @@ public class GameManager : MonoBehaviour
     {
         if (success)
         {
+            if (player.GetCurrentPos == levels[currentLevel].ExitPos)
+            {
+                uiController.ShowVictory(levels[currentLevel].Message);
+                currentState = GameStates.Won;
+            }
+            else
+            {
+                enemy.Move();
+                //player.Inputs.Enable();
+            }
+
             player.Inputs.Disable();
-            enemy.Move();
+            //if(currentState != GameStates.Playing)
+            //{
+
+            //enemy.Move();
+            //}
         }
     }
     //Called when enemy has no more moves, allowing the player to move again
@@ -112,15 +129,16 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if(player.GetCurrentPos == levels[currentLevel].ExitPos)
-            {
-                uiController.ShowVictory(levels[currentLevel].Message);
-                currentState = GameStates.Won;
-            }
-            else
-            {
-                player.Inputs.Enable();
-            }
+            player.Inputs.Enable();
+            //if (player.GetCurrentPos == levels[currentLevel].ExitPos)
+            //{
+            //    //uiController.ShowVictory(levels[currentLevel].Message);
+            //    //currentState = GameStates.Won;
+            //}
+            //else
+            //{
+            //    player.Inputs.Enable();
+            //}
         }
     }
     //In case of victory or defeat continue the game

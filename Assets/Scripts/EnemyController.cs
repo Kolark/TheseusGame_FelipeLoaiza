@@ -11,6 +11,8 @@ public class EnemyController : GridEntity
     GridEntity target;
     public System.Action onTurnFinished;
 
+    private bool successfulMove = false;
+
     //Set Target to follow.
     public void SetTarget(GridEntity target)
     {
@@ -29,11 +31,15 @@ public class EnemyController : GridEntity
     {
         for (int i = 0; i < stepsPerMovement; i++)
         {
-            Step();
-            yield return wait;
+            if (Step())
+            {
+                yield return wait;
+            }
+            else yield return null;
         }
         onTurnFinished?.Invoke();
     }
+
     //Revers movement in this case the amount determined by stepsPerMovement
     public override void UndoMovement()
     {
@@ -43,30 +49,31 @@ public class EnemyController : GridEntity
         }
     }
     //One Single Movement
-    private void Step()
+    private bool Step()
     {
         //If not vertifcally aligned and can't move horizontally,
         int diffX = target.GetCurrentPos.x - currentPos.x;
         int diffY = target.GetCurrentPos.y - currentPos.y;
-        if (diffX == 0 && diffY == 0) return;
+        if (diffX == 0 && diffY == 0) return false;
+
         if(diffX != 0)//X axis not aligned
         {
 
             if(diffX > 0)//target to the right
             {
                 //MoveRight();
-                Move(Vector2Int.right);
+                return Move(Vector2Int.right);
             }
             else //target to the left
             {
                 //MoveLeft();
-                Move(Vector2Int.left);
+                return Move(Vector2Int.left);
             }
             
         }
         else//X axis aligned
         {
-            TryMoveVertical(diffY);
+            return TryMoveVertical(diffY);
         }
     }
 
@@ -79,17 +86,17 @@ public class EnemyController : GridEntity
         }
     }
     //Tries to move Vertical
-    private void TryMoveVertical(int diffY)
+    private bool TryMoveVertical(int diffY)
     {
         if (diffY > 0)//target went up
         {
             //MoveUp();
-            Move(Vector2Int.up);
+            return Move(Vector2Int.up);
         }
         else //target went down
         {
             //MoveDown();
-            Move(Vector2Int.down);
+            return Move(Vector2Int.down);
         }
     }
 }

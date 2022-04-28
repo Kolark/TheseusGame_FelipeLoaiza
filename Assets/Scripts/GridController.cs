@@ -6,7 +6,7 @@ public class GridController : MonoBehaviour
 {
     //Current grid data
     GridObject level;
-
+    //xdddd
     //Info that allows it to instantiate squares and walls.
     [SerializeField] Transform squaresParent;
     [SerializeField] GameObject square;

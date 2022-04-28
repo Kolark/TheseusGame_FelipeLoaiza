@@ -15,5 +15,6 @@ public class SignTest : MonoBehaviour
     {
         Debug.Log("0 system" + System.Math.Sign(0));
         Debug.Log("0 unity" + Mathf.Sign(0));
+        //xdddd
     }
 }

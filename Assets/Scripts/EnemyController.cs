@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : GridEntity
 {
-    //Amount of time to wait per move
+    //Amount of time to wait per move //aaaaaaaaaaaa
     WaitForSeconds wait = new WaitForSeconds(0.35f);
     //The amount of steps it takes per movement
     [SerializeField] int stepsPerMovement;

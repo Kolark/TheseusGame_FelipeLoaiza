@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 public class GridEntity : MonoBehaviour
 {
-    //Saved old positions, allows it to undo
+    //Saved old positions, allows it to undo      bbbbbbbbbbb
     protected Stack<Vector2Int> recordedPositions;
 
     protected Vector2Int currentPos;

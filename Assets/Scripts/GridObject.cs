@@ -5,7 +5,7 @@ using System;
 [CreateAssetMenu( fileName = "gridObj",menuName = "grid/create Grid",order =0)]
 public class GridObject : ScriptableObject
 {
-    //Player,Enemy and Exit Positions
+    //Player,Enemy and Exit Positions //aaa
     [SerializeField] Vector2Int playerPos;
     [SerializeField] Vector2Int enemyPos;
     [SerializeField] Vector2Int exitPos;
